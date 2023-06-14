@@ -20,7 +20,6 @@ public class Transport {
         return length;
     }
 
-
     public void setWeight(int weight) {
         this.weight = weight;
     }

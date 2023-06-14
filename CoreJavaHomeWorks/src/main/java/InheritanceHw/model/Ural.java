@@ -8,15 +8,27 @@ public class Ural extends Motorbike {
     public Ural() {
     }
 
+    public Ural(boolean firstAidKit) {
+        this.firstAidKit = firstAidKit;
+    }
+
+    public Ural(int volume, boolean firstAidKit) {
+        super(volume);
+        this.firstAidKit = firstAidKit;
+    }
+
     public Ural(int volume, boolean firstAidKit, String name) {
         super(volume);
         this.firstAidKit = firstAidKit;
         this.name = name;
     }
 
-    public Ural(int volume, boolean firstAidKit) {
-        super(volume);
-        this.firstAidKit = firstAidKit;
+
+
+    public String showInfo() {
+        return "Ural:\n" +
+                "firstAidKit = " + firstAidKit + '\n' +
+                "name = " + name;
     }
 
     public boolean isFirstAidKit() {
@@ -29,9 +41,5 @@ public class Ural extends Motorbike {
 
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 }
