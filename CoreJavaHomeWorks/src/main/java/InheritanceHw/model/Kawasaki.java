@@ -20,4 +20,16 @@ public class Kawasaki extends Motorbike {
         super(weight, length, volume);
         this.year = year;
     }
+
+    public void jump() {
+        System.out.println("Kawasaki jump");
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
 }
