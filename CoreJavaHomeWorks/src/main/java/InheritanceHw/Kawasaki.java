@@ -1,4 +1,4 @@
-package InheritanceHw.model;
+package InheritanceHw;
 
 public class Kawasaki extends Motorbike {
 
