@@ -1,4 +1,4 @@
-import InheritanceHw.model.*;
+package InheritanceHw;
 
 public class Main {
 
