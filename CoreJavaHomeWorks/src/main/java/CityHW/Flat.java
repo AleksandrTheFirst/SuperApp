@@ -1,41 +1,55 @@
 package CityHW;
 
+import CityHW.Interfaces.IFlat;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Flat extends House {
+public class Flat implements IFlat {
 
-    private String address;
-    List<Flat> flatList = new ArrayList<>();
+    private int number;
+    List<Settler> settlerList = new ArrayList<>();
+
+    private final int CAPACITY = 2;
 
     public Flat() {}
 
-    public Flat(String address) {
-        this.address = address;
+    public Flat(int number) {
+        this.number = number;
     }
 
-    public Flat(String address, List<Flat> flatList) {
-        this.address = address;
-        this.flatList = flatList;
+    public Flat(int number, List<Settler> settlerList) {
+        this.number = number;
+        this.settlerList = settlerList;
     }
 
-    public String getAddress() {
-        return address;
+
+    @Override
+    public int getNumber() {
+        return number;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    @Override
+    public void addSettler(Settler settler) {
+        if (settlerList.size() < CAPACITY) {
+            settlerList.add(settler);
+        }
+        else {
+            System.out.println("Нельзя заселить более 2-х жильцов в одну квартиру " + number);
+        }
     }
 
-    public List<Flat> getFlatList() {
-        return flatList;
+    @Override
+    public List<Settler> getSettlersList() {
+        return settlerList;
     }
 
-    public void setFlatList(List<Flat> flatList) {
-        this.flatList = flatList;
+    public void setNumber(int number) {
+        this.number = number;
     }
 
-    public void addFlat(Flat flat) {
-        flatList.add(flat);
+    public List<Settler> getSettlerList() {
+        return settlerList;
     }
+
 }

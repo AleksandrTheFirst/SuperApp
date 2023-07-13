@@ -1,12 +1,15 @@
 package CityHW;
 
+import CityHW.Interfaces.IFlat;
+import CityHW.Interfaces.IHouse;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class House extends City {
+public class House implements IHouse {
 
     private String address;
-    private List<Flat> flatList = new ArrayList<>();
+    private List<IFlat> flatList = new ArrayList<>();
 
     public House() {}
 
@@ -14,28 +17,22 @@ public class House extends City {
         this.address = address;
     }
 
-    public House(String address, List<Flat> flatList) {
+    public House(String address, List<IFlat> flatList) {
         this.address = address;
         this.flatList = flatList;
     }
 
+    @Override
     public String getAddress() {
         return address;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public List<Flat> getFlatList() {
-        return flatList;
-    }
-
-    public void setFlatList(List<Flat> flatList) {
-        this.flatList = flatList;
-    }
-
-    public void addFlat(Flat flat) {
+    @Override
+    public void addFlat(IFlat flat) {
         flatList.add(flat);
+    }
+
+    public List<IFlat> getFlatList() {
+        return flatList;
     }
 }
